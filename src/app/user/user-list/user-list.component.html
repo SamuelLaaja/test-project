@@ -1,0 +1,12 @@
+<p class="ekoodi-user-list-title">
+  {{title}}
+</p>
+
+  <!--foreach-->
+<div *ngFor="let user of users" (click)="onUserSelect(user)">
+  <ekoodi-user-info [user]="user"></ekoodi-user-info>
+    <!--// if-->
+  <!--<div *ngIf="user.firstName != 'Asko'">-->
+  <!--{{user.firstName}} {{user.lastName}}-->
+  <!--</div>-->
+</div>
