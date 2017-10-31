@@ -7,12 +7,12 @@
   <!--<div *ngIf="user.firstName != 'Asko'">-->
   <!--{{user.firstName}} {{user.lastName}}-->
   <!--</div>-->
-<!--</div>-->
+  <!--</div>-->
 
   <mat-list>
     <h3 mat-subheader>Users</h3>
     <ekoodi-user-info *ngFor="let user of users"
-      [user]="user">
+      [user]="user" (click)="onUserSelect(user)">
     </ekoodi-user-info>
   </mat-list>
 
