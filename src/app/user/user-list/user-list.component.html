@@ -2,11 +2,18 @@
   {{title}}
 </p>
 
-  <!--foreach-->
-<div *ngFor="let user of users" (click)="onUserSelect(user)">
-  <ekoodi-user-info [user]="user"></ekoodi-user-info>
-    <!--// if-->
+<!--<div *ngFor="let user of users" (click)="onUserSelect(user)">-->
+  <!--<ekoodi-user-info [user]="user"></ekoodi-user-info>-->
   <!--<div *ngIf="user.firstName != 'Asko'">-->
   <!--{{user.firstName}} {{user.lastName}}-->
   <!--</div>-->
-</div>
+<!--</div>-->
+
+  <mat-list>
+    <h3 mat-subheader>Users</h3>
+    <ekoodi-user-info *ngFor="let user of users"
+      [user]="user">
+    </ekoodi-user-info>
+  </mat-list>
+
+
