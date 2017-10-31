@@ -9,10 +9,19 @@
   <!--</div>-->
   <!--</div>-->
 
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="First Name" [(ngModel)]="user.firstName">
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Last Name" [(ngModel)]="user.lastName">
+</mat-form-field>
+
+<button mat-raised-button (click)="addUser()">Add User</button><br><br>
+
   <mat-list>
-    <h3 mat-subheader>Users</h3>
     <ekoodi-user-info *ngFor="let user of users"
-      [user]="user" (click)="onUserSelect(user)">
+      [user]="user">
     </ekoodi-user-info>
   </mat-list>
 

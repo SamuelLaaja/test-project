@@ -9,10 +9,13 @@ import {UserService} from '../user.service';
 })
 export class UserListComponent implements OnInit {
   title: string;
+  user: User;
   users: User[];
   @Output() userSelected: EventEmitter<User>;
+
   constructor(private userService: UserService) {
-    this.title = 'User List';
+    this.title = 'User list';
+    this.user = new User();
     this.users = [];
     this.userSelected = new EventEmitter();
   }
@@ -23,4 +26,12 @@ export class UserListComponent implements OnInit {
   onUserSelect(user: User) {
     this.userSelected.emit(user);
   }
+
+  addUser() {
+     if (this.user.firstName && this.user.lastName) {
+      console.log(this.user);
+      this.userService.addNewUser(this.user);
+    }
+  }
+
 }

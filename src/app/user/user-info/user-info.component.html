@@ -1,6 +1,8 @@
 
 <mat-list-item>
-  <mat-icon mat-list-icon>face</mat-icon>
+  <mat-icon mat-list-icon class="material-icons orange600">face</mat-icon>
   <h4 mat-line>{{user.firstName}}</h4>
   <p mat-line>{{user.lastName}}</p>
+  <mat-icon mat-list-icon class="material-icons orange600" (click)="delUser()">delete_forever</mat-icon>
+
 </mat-list-item>

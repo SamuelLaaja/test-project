@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../user';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'ekoodi-user-info',
@@ -11,9 +12,12 @@ export class UserInfoComponent implements OnInit {
   @Input() user: User;
 
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
+  delUser() {
+    this.userService.deleteUser(this.user);
+  }
 }
